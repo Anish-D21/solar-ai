@@ -1,0 +1,1 @@
+print("Solar AI Project Initialized Successfully")
