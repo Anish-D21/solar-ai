@@ -1,21 +1,29 @@
 import pandas as pd
+from pathlib import Path
 
 
-def load_csv(path):
-    """Load dataset from CSV file."""
-    try:
-        df = pd.read_csv(path)
-        return df
-    except Exception as e:
-        print("Error loading dataset:", e)
-        return None
+def get_project_root():
+    """
+    Returns the root folder of the project dynamically.
+    Works regardless of where the script is run from.
+    """
+    return Path(__file__).resolve().parents[1]
+
+
+def load_csv(filename):
+    """
+    Loads a CSV file from the /data directory safely.
+    """
+    root = get_project_root()
+    file_path = root / "data" / filename
+
+    if not file_path.exists():
+        raise FileNotFoundError(f"{file_path} not found")
+
+    df = pd.read_csv(file_path)
+    return df
 
 
 def preview_data(df):
-    """Print dataset preview."""
-    if df is not None:
-        print("\nDataset Shape:", df.shape)
-        print("\nFirst 5 Rows:")
-        print(df.head())
-    else:
-        print("No data to preview.")
+    print("\nDataset Shape:", df.shape)
+    print("\nFirst 5 Rows:\n", df.head())
