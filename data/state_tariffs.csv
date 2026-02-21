@@ -1,0 +1,49 @@
+state,consumer_type,slab_start,slab_end,rate
+
+Delhi,residential,0,200,3
+Delhi,residential,201,400,5
+Delhi,residential,401,800,6.5
+Delhi,residential,801,1200,7
+Delhi,residential,1201,999999,8
+
+Punjab,residential,0,100,4
+Punjab,residential,101,200,6
+Punjab,residential,201,300,6.75
+Punjab,residential,301,999999,7.5
+
+Uttar Pradesh,residential,0,100,3.5
+Uttar Pradesh,residential,101,200,5
+Uttar Pradesh,residential,201,400,6.5
+Uttar Pradesh,residential,401,999999,8
+
+Maharashtra,residential,0,100,4.43
+Maharashtra,residential,101,300,9.64
+Maharashtra,residential,301,500,12.83
+Maharashtra,residential,501,999999,14.33
+
+Haryana,residential,0,50,2.2
+Haryana,residential,51,100,2.7
+Haryana,residential,101,150,2.95
+Haryana,residential,151,300,5.25
+Haryana,residential,301,500,6.45
+Haryana,residential,501,999999,7.1
+
+Bihar,residential,0,100,3.75
+Bihar,residential,101,200,5
+Bihar,residential,201,400,6
+Bihar,residential,401,999999,7.5
+
+Rajasthan,residential,0,150,4.75
+Rajasthan,residential,151,300,6.5
+Rajasthan,residential,301,999999,7.95
+
+Tamil Nadu,residential,0,400,4.95
+Tamil Nadu,residential,401,500,6.65
+Tamil Nadu,residential,501,600,8.8
+Tamil Nadu,residential,601,800,9.95
+Tamil Nadu,residential,801,999999,11.05
+
+Gujarat,residential,0,100,3.6
+Gujarat,residential,101,200,4.85
+Gujarat,residential,201,300,6.1
+Gujarat,residential,301,999999,7.3

@@ -4,3 +4,18 @@ __pycache__/
 models/*.pkl
 .env
 .DS_Store
+# --- Runtime generated data (do NOT track) ---
+data/city_state_cache.json
+
+# Allow tariff dataset but ignore other temp files if added later
+# (We will explicitly track state_tariffs.csv)
+!data/state_tariffs.csv
+
+# --- Personal / testing scripts ---
+src/test_*.py
+
+# --- Jupyter / misc (future-proofing) ---
+.ipynb_checkpoints/
+
+# --- OS noise ---
+Thumbs.db
