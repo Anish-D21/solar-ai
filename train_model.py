@@ -28,6 +28,9 @@ model.fit(X_train, y_train)
 score = model.score(X_test, y_test)
 print(f"✅ Model trained successfully | R² Score: {score:.4f}")
 
+# ---- Ensure models folder exists (ADD THIS) ----
+model_path.parent.mkdir(parents=True, exist_ok=True)
+
 # ---- Save Model ----
 joblib.dump(model, model_path)
 print(f"✅ Model saved at: {model_path}")
