@@ -1,14 +1,17 @@
 import pandas as pd
+import numpy as np
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 import joblib
 from pathlib import Path
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+
 
 # ---- Resolve project root safely ----
 BASE_DIR = Path(__file__).resolve().parent
 
-data_path = BASE_DIR / "data" / "solar_data.csv"
-model_path = BASE_DIR / "models" / "energy_model.pkl"
+data_path = BASE_DIR / "data" / "solar_data_large.csv"
+model_path = BASE_DIR / "models" / "energy_model_large.pkl"
 
 # ---- Load Dataset ----
 df = pd.read_csv(data_path)
@@ -25,8 +28,19 @@ X_train, X_test, y_train, y_test = train_test_split(
 model = RandomForestRegressor(n_estimators=200, random_state=42)
 model.fit(X_train, y_train)
 
+y_pred = model.predict(X_test)
+
+
 score = model.score(X_test, y_test)
 print(f"✅ Model trained successfully | R² Score: {score:.4f}")
+# MAE
+mae = mean_absolute_error(y_test, y_pred)
+# RMSE
+rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+
+print("MAE:", mae)
+print("RMSE:", rmse)
+
 
 # ---- Ensure models folder exists (ADD THIS) ----
 model_path.parent.mkdir(parents=True, exist_ok=True)
